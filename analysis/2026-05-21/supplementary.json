@@ -1,0 +1,278 @@
+{
+  "source_glob": "data/binance_nic/2026-05-21/*.parquet",
+  "per_burst_latency": [
+    4695164,
+    1.015,
+    0.944,
+    1.673,
+    1.899,
+    213.992
+  ],
+  "event_window_2025_minute": [
+    {
+      "minute": "2026-05-21 16:20:00+00:00",
+      "n": 9305,
+      "mean_lat_ms": 1.493,
+      "p50_lat_ms": 1.341,
+      "p99_lat_ms": 6.184,
+      "max_lat_ms": 11.164
+    },
+    {
+      "minute": "2026-05-21 16:21:00+00:00",
+      "n": 5631,
+      "mean_lat_ms": 1.213,
+      "p50_lat_ms": 1.107,
+      "p99_lat_ms": 2.243,
+      "max_lat_ms": 10.443
+    },
+    {
+      "minute": "2026-05-21 16:22:00+00:00",
+      "n": 9377,
+      "mean_lat_ms": 1.44,
+      "p50_lat_ms": 1.589,
+      "p99_lat_ms": 3.35,
+      "max_lat_ms": 6.172
+    },
+    {
+      "minute": "2026-05-21 16:23:00+00:00",
+      "n": 8380,
+      "mean_lat_ms": 1.417,
+      "p50_lat_ms": 1.3,
+      "p99_lat_ms": 4.225,
+      "max_lat_ms": 6.645
+    },
+    {
+      "minute": "2026-05-21 16:24:00+00:00",
+      "n": 7548,
+      "mean_lat_ms": 1.462,
+      "p50_lat_ms": 1.623,
+      "p99_lat_ms": 3.949,
+      "max_lat_ms": 10.202
+    },
+    {
+      "minute": "2026-05-21 16:25:00+00:00",
+      "n": 10216,
+      "mean_lat_ms": 1.759,
+      "p50_lat_ms": 1.679,
+      "p99_lat_ms": 12.611,
+      "max_lat_ms": 12.932
+    },
+    {
+      "minute": "2026-05-21 16:26:00+00:00",
+      "n": 6894,
+      "mean_lat_ms": 1.383,
+      "p50_lat_ms": 1.238,
+      "p99_lat_ms": 2.123,
+      "max_lat_ms": 9.768
+    },
+    {
+      "minute": "2026-05-21 16:27:00+00:00",
+      "n": 6661,
+      "mean_lat_ms": 1.324,
+      "p50_lat_ms": 1.154,
+      "p99_lat_ms": 2.631,
+      "max_lat_ms": 4.981
+    },
+    {
+      "minute": "2026-05-21 16:28:00+00:00",
+      "n": 6161,
+      "mean_lat_ms": 1.405,
+      "p50_lat_ms": 1.17,
+      "p99_lat_ms": 2.469,
+      "max_lat_ms": 148.71
+    },
+    {
+      "minute": "2026-05-21 16:29:00+00:00",
+      "n": 6626,
+      "mean_lat_ms": 1.633,
+      "p50_lat_ms": 1.003,
+      "p99_lat_ms": 3.479,
+      "max_lat_ms": 200.757
+    },
+    {
+      "minute": "2026-05-21 16:30:00+00:00",
+      "n": 8574,
+      "mean_lat_ms": 1.192,
+      "p50_lat_ms": 1.063,
+      "p99_lat_ms": 2.033,
+      "max_lat_ms": 20.679
+    },
+    {
+      "minute": "2026-05-21 16:31:00+00:00",
+      "n": 6254,
+      "mean_lat_ms": 1.2,
+      "p50_lat_ms": 0.992,
+      "p99_lat_ms": 4.303,
+      "max_lat_ms": 56.762
+    },
+    {
+      "minute": "2026-05-21 16:32:00+00:00",
+      "n": 7082,
+      "mean_lat_ms": 1.219,
+      "p50_lat_ms": 1.03,
+      "p99_lat_ms": 3.724,
+      "max_lat_ms": 6.342
+    },
+    {
+      "minute": "2026-05-21 16:33:00+00:00",
+      "n": 7352,
+      "mean_lat_ms": 1.185,
+      "p50_lat_ms": 1.056,
+      "p99_lat_ms": 2.513,
+      "max_lat_ms": 10.913
+    },
+    {
+      "minute": "2026-05-21 16:34:00+00:00",
+      "n": 7332,
+      "mean_lat_ms": 2.615,
+      "p50_lat_ms": 1.249,
+      "p99_lat_ms": 35.796,
+      "max_lat_ms": 213.992
+    },
+    {
+      "minute": "2026-05-21 16:35:00+00:00",
+      "n": 10619,
+      "mean_lat_ms": 1.875,
+      "p50_lat_ms": 1.718,
+      "p99_lat_ms": 10.397,
+      "max_lat_ms": 24.003
+    },
+    {
+      "minute": "2026-05-21 16:36:00+00:00",
+      "n": 16046,
+      "mean_lat_ms": 1.924,
+      "p50_lat_ms": 1.773,
+      "p99_lat_ms": 8.132,
+      "max_lat_ms": 37.914
+    },
+    {
+      "minute": "2026-05-21 16:37:00+00:00",
+      "n": 10381,
+      "mean_lat_ms": 1.449,
+      "p50_lat_ms": 1.654,
+      "p99_lat_ms": 2.846,
+      "max_lat_ms": 4.821
+    },
+    {
+      "minute": "2026-05-21 16:38:00+00:00",
+      "n": 8517,
+      "mean_lat_ms": 1.621,
+      "p50_lat_ms": 1.39,
+      "p99_lat_ms": 4.367,
+      "max_lat_ms": 211.701
+    },
+    {
+      "minute": "2026-05-21 16:39:00+00:00",
+      "n": 7943,
+      "mean_lat_ms": 1.356,
+      "p50_lat_ms": 1.347,
+      "p99_lat_ms": 2.619,
+      "max_lat_ms": 6.636
+    },
+    {
+      "minute": "2026-05-21 16:40:00+00:00",
+      "n": 8233,
+      "mean_lat_ms": 1.464,
+      "p50_lat_ms": 1.5,
+      "p99_lat_ms": 7.573,
+      "max_lat_ms": 9.13
+    },
+    {
+      "minute": "2026-05-21 16:41:00+00:00",
+      "n": 7107,
+      "mean_lat_ms": 1.359,
+      "p50_lat_ms": 1.135,
+      "p99_lat_ms": 4.544,
+      "max_lat_ms": 7.023
+    },
+    {
+      "minute": "2026-05-21 16:42:00+00:00",
+      "n": 4633,
+      "mean_lat_ms": 1.164,
+      "p50_lat_ms": 1.041,
+      "p99_lat_ms": 1.889,
+      "max_lat_ms": 8.261
+    },
+    {
+      "minute": "2026-05-21 16:43:00+00:00",
+      "n": 9916,
+      "mean_lat_ms": 1.54,
+      "p50_lat_ms": 1.618,
+      "p99_lat_ms": 5.552,
+      "max_lat_ms": 8.242
+    },
+    {
+      "minute": "2026-05-21 16:44:00+00:00",
+      "n": 7304,
+      "mean_lat_ms": 1.294,
+      "p50_lat_ms": 1.128,
+      "p99_lat_ms": 2.891,
+      "max_lat_ms": 3.609
+    }
+  ],
+  "delta_sanity_check": [
+    9854401,
+    9854401,
+    100.0,
+    0.0,
+    0.0
+  ],
+  "symbol_volume_share": [
+    {
+      "symbol": "ETHUSDT",
+      "rows": 2761310,
+      "pct_of_total": 28.02
+    },
+    {
+      "symbol": "BTCUSDT",
+      "rows": 2687651,
+      "pct_of_total": 27.27
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "rows": 972119,
+      "pct_of_total": 9.86
+    },
+    {
+      "symbol": "SOLUSDT",
+      "rows": 971615,
+      "pct_of_total": 9.86
+    },
+    {
+      "symbol": "XRPUSDT",
+      "rows": 887022,
+      "pct_of_total": 9.0
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "rows": 640834,
+      "pct_of_total": 6.5
+    },
+    {
+      "symbol": "LINKUSDT",
+      "rows": 554598,
+      "pct_of_total": 5.63
+    },
+    {
+      "symbol": "ADAUSDT",
+      "rows": 380224,
+      "pct_of_total": 3.86
+    }
+  ],
+  "coalescing_by_stream_type": [
+    {
+      "stream_type": "depth",
+      "total_records": 3957584,
+      "unique_arrivals": 3939296,
+      "pct_coalesced": 0.46,
+      "avg_records_per_arrival": 1.0
+    },
+    {
+      "stream_type": "trade",
+      "total_records": 5897789,
+      "unique_arrivals": 763840,
+      "pct_coalesced": 87.05,
+      "avg_records_per_arrival": 7.72
+    }
+  ]
+}

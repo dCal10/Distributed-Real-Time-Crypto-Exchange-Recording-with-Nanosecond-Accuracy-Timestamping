@@ -1,0 +1,50 @@
+# Exchange websocket configuration.
+# Each entry maps to a collector class; symbols list drives subscriptions.
+
+binance:
+  region: ap-northeast-1
+  endpoint: wss://data-stream.binance.vision
+  # Dual stream: @depth@100ms (10 Hz orderbook deltas) + @trade (per-event T).
+  # Hardcoded in BinanceCollector.run(); both streams together are the
+  # measurement contract, making it YAML-tunable invites accidental drift.
+  symbols:
+    - btcusdt
+    - ethusdt
+
+coinbase:
+  region: us-east-1
+  endpoint: wss://advanced-trade-ws.coinbase.com
+  # Advanced Trade public channels: market_trades + ticker (hardcoded in
+  # CoinbaseCollector.CHANNELS). Full level2 needs API-key auth; we
+  # subscribe to the unauthenticated subset for now.
+  symbols:
+    - BTC-USD
+    - ETH-USD
+
+okx:
+  region: ap-east-1  # Hong Kong; OKX runs on Alibaba Cloud HK (non-AWS), "near but not co-located"
+  endpoint: wss://ws.okx.com:8443/ws/v5/public
+  # Dual channel: books (400-level L2) + trades (per-event). Hardcoded
+  # in OKXCollector.CHANNELS.
+  symbols:
+    - BTC-USDT
+    - ETH-USDT
+
+kalshi:
+  region: us-east-2  # Ohio, closest AWS region to Chicago metro
+  endpoint: wss://trading-api.kalshi.com/trade-api/ws/v2
+  auth_required: true  # Kalshi requires API key + RSA-PSS signed timestamp on the WS handshake
+  api_key_id: null         # Fill with Kalshi API key id; collector raises NotImplementedError if null
+  private_key_path: null   # Path to PEM-encoded RSA private key (abs or repo-relative)
+  symbols: []  # TBD pending professor input on instruments
+  # NOTE: Kalshi instruments expire and regenerate; static config does not work
+  # long-term. Dynamic discovery via REST /markets is a known follow-up.
+
+polymarket:
+  region: eu-west-2  # London vantage point
+  endpoint: wss://ws-subscriptions-clob.polymarket.com/ws/
+  auth_required: false  # public CLOB feed
+  symbols: []  # TBD pending professor input on instruments
+  # NOTE: Polymarket subscription cap is 500 asset_ids per connection.
+  # PolymarketCollector refuses to start above that; multi-connection
+  # support is a known TODO.

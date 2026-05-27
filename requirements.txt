@@ -1,0 +1,21 @@
+# Cloud tier (collectors)
+websockets>=15.0
+wsproto>=1.2          # sans-IO WS framing for the NIC-timestamp raw-socket path (ADR-0012)
+pyyaml>=6.0
+
+# Storage
+pyarrow>=15.0
+boto3>=1.30
+
+# Lab tier (pipeline + analysis)
+pandas>=2.2
+duckdb>=1.0
+
+# Analytics + notebooks
+matplotlib>=3.8
+numpy>=2.0
+jupyter>=1.0
+ipykernel>=6.0
+
+# Tests
+pytest>=8.0

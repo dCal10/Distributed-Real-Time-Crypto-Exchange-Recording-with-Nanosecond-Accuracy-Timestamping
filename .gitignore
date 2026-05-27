@@ -1,0 +1,34 @@
+# Project data (per CLAUDE.md: local recording output, synced to S3)
+/data/
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# C/C++ build artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.dylib
+/build/
+/cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Claude Code (per-developer local state, settings, task counter)
+.claude/

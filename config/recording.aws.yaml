@@ -1,0 +1,22 @@
+# AWS production configuration.
+# Selected by RECORDING_CONFIG=aws.
+
+timestamp_source: ptp_clock_gettime  # PTPClockGettimeSource until C++ collector replaces it
+# When the C++ collector is in place, switch to: nic_hw
+
+# Phase 2 uses the local Parquet sink on the EC2 box; an `aws s3 sync` cron
+# (or equivalent) copies ./data/ to S3 until S3ParquetSink (Phase 3) lands.
+sink:
+  type: local_parquet
+  base_dir: ./data
+  batch_size: 1000
+  flush_seconds: 5.0
+
+# Phase 3 sink (kept here as the canonical config for when S3ParquetSink ships):
+# sink:
+#   type: s3_parquet
+#   bucket: ${S3_BUCKET}      # set via env var, NOT hardcoded
+#   prefix: market-data
+#   local_buffer_dir: /tmp/parquet-buffer
+#   batch_size: 1000
+#   flush_seconds: 5.0

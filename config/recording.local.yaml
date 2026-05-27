@@ -1,0 +1,12 @@
+# Local development configuration.
+# Selected by RECORDING_CONFIG=local (default).
+
+timestamp_source: clock_gettime  # ClockGettimeSource
+
+sink:
+  type: local_parquet
+  base_dir: ./data
+  batch_size: 1000
+  flush_seconds: 5.0
+
+# No S3, no PTP assumptions, no auth.

@@ -1,0 +1,61 @@
+# Templated unit: %i is the systemd instance name and becomes the
+# `--venue %i` argument. It works for ANY venue registered in
+# collector.exchanges.EXCHANGES with no per-venue edits, so
+# group19-collector@coinbase_nic (us-east-1) and group19-collector@okx_nic
+# (ap-east-1) deploy with this exact file once their registry entries exist
+# (added 2026-05-16). Production paths (binance, coinbase, okx) are
+# unaffected; only the instance name after @ changes.
+#
+# SIOCSHWTSTAMP requirement: every `*_nic` variant needs RX hardware
+# timestamping toggled on at the device level via the SIOCSHWTSTAMP ioctl
+# (HWTSTAMP_FILTER_ALL); SO_TIMESTAMPING on the socket alone is not
+# sufficient on AWS Nitro/ENA. The ioctl is idempotent and harmless for the
+# non-NIC production paths, so it is safe to run unconditionally before
+# ExecStart for every venue. Per ADR-0012 "Deployment addendum" it runs as
+# the ExecStartPre below, with the `+` prefix so it executes as root
+# (CAP_NET_ADMIN is required for SIOCSHWTSTAMP; without the `+` it would run
+# as User=ec2-user, fail with EPERM, and `*_nic` venues would silently
+# regress to the software-timestamp fallback).
+#
+# Drift corrected 2026-05-17: the ExecStartPre line and
+# infra/scripts/enable-hw-timestamping.sh are now committed and match the
+# unit running on the Tokyo box (/etc/systemd/system/group19-collector@.service).
+# Previously the script and ExecStartPre existed only on the box; the repo
+# is now the source of truth, so a fresh region picks both up via git clone
+# + install.sh with no manual step.
+[Unit]
+Description=PTP-synced market data collector (venue=%i)
+Documentation=file:///home/ec2-user/aws-ptp-crypto-recording/infra/README.md
+After=network-online.target chronyd.service
+Wants=network-online.target
+Requires=chronyd.service
+
+[Service]
+Type=exec
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/aws-ptp-crypto-recording
+ExecStartPre=+/home/ec2-user/aws-ptp-crypto-recording/infra/scripts/enable-hw-timestamping.sh
+
+Environment=RECORDING_CONFIG=aws
+Environment=PYTHONUNBUFFERED=1
+
+ExecStart=/home/ec2-user/aws-ptp-crypto-recording/.venv/bin/python -m collector.entrypoint --venue %i
+
+Restart=on-failure
+RestartSec=10
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=group19-collector-%i
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/ec2-user/aws-ptp-crypto-recording/data
+
+[Install]
+WantedBy=multi-user.target
