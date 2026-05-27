@@ -1,13 +1,11 @@
-# aws-ptp-crypto-recording
+**Distributed Real-Time Crypto Exchange Recording with Nanosecond Accuracy Timestamping**
 
 PTP-synchronized cross-exchange market data recording pipeline. It records
 crypto and prediction-market order book and trade feeds with NIC-hardware and
 PTP-disciplined timestamps, so cross-venue feed latency can be measured at a
 precision NTP cannot reach.
 
-IE421 High Frequency Trading, Spring 2026, Group 19. Supervised by Professor
-David Lariviere. This is a measurement and analysis project, not a trading
-system.
+This is a measurement and analysis project, not a trading system.
 
 ## Current status (2026-05-22)
 
@@ -174,30 +172,8 @@ Files are immutable once flushed; the lab tier reads them via DuckDB.
    ([ADR-0012](docs/decisions/0012-p2-path-selection.md)); optional, since the
    Python path is verified in production.
 
-## Course rules (non-negotiable)
-
-Daily commits to GitLab when working; individual attribution per commit (no
-pair programming on the same code block); communication on Discord group
-channel and recorded weekly Zoom only (no DMs/email/WeChat, English only);
-weekly reports submitted by team leader to Canvas + Box.
 
 ## Team & contact
 
-Individual attribution is captured by the GitLab commit history.
+Arya Chhabra (aryac5@illinois.edu) and Yichen Liu (yichen32@illinois.edu). Mentored by Professor David Lariviere (https://www.linkedin.com/in/davidlariviere).
 
-- **yichen32** (Yichen Yan): infrastructure, architecture, software pipeline,
-  Tokyo deployment, schema design, the NIC-hardware path, and the
-  `SIOCSHWTSTAMP` finding.
-- **aryac5** (Arya Chhabra): cost analysis and instance sizing, plus collector
-  and lab-tier engineering (Binance REST depth-snapshot bootstrap, Coinbase
-  level-2 parser, the L2 `book_builder`, `book_replay`, and the sequence-gap
-  `validator`).
-
-Questions about the project: Discord group channel (per course rules). A sp27
-maintainer picking this up should start with this README, then
-[docs/final_report.md](docs/final_report.md), then deploy a second region (next
-step #1 above) for cross-venue data.
-
-## License
-
-Coursework. Not licensed for redistribution.
