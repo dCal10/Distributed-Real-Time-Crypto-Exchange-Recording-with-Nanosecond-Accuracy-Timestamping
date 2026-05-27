@@ -1,4 +1,4 @@
-**Distributed Real-Time Crypto Exchange Recording with Nanosecond Accuracy Timestamping**
+# Distributed Real-Time Crypto Exchange Recording with Nanosecond Accuracy Timestamping
 
 PTP-synchronized cross-exchange market data recording pipeline. It records
 crypto and prediction-market order book and trade feeds with NIC-hardware and
